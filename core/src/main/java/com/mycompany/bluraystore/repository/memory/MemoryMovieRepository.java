@@ -1,10 +1,13 @@
-package com.mycompany.bluraystore.repository;
+package com.mycompany.bluraystore.repository.memory;
 
 import com.mycompany.bluraystore.entity.Movie;
+import com.mycompany.bluraystore.repository.MovieRepositoryInterface;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     private static List<Movie> movies = new ArrayList<>();

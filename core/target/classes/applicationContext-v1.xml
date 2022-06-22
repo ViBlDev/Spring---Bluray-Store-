@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="repository" class="com.mycompany.bluraystore.repository.FileMovieRepository">
+    <bean id="repository" class="com.mycompany.bluraystore.repository.file.FileMovieRepository">
         <property name="file" value="C:\temp\\Monfichier.csv"/>
     </bean>
 

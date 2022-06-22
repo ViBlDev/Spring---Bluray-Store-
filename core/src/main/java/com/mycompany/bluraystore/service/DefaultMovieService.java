@@ -3,7 +3,9 @@ package com.mycompany.bluraystore.service;
 import com.mycompany.bluraystore.entity.Movie;
 import com.mycompany.bluraystore.repository.MovieRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DefaultMovieService implements MovieServiceInterface{
 
     // private MovieRepository repository = new MovieRepository();
