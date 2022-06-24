@@ -5,6 +5,8 @@ import com.mycompany.bluraystore.repository.MovieRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DefaultMovieService implements MovieServiceInterface{
 
@@ -16,6 +18,15 @@ public class DefaultMovieService implements MovieServiceInterface{
 
     public void registerMovie(Movie movie) {
         // repository.createMovie(movie);
+        repository.add(movie);
+    }
+
+    @Override
+    public List<Movie> getMovieList() {
+        return repository.list();
+    }
+
+    public void getMovieList(Movie movie){
         repository.add(movie);
     }
 

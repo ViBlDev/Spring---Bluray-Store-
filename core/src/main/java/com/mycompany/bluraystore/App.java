@@ -1,24 +1,21 @@
 package com.mycompany.bluraystore;
 
 import com.mycompany.bluraystore.controller.MovieController;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan( basePackages = { "com.mycompany.bluraystore.controller",
-        "com.mycompany.bluraystore.service",
-        "com.mycompany.bluraystore.repository.file"})
-@PropertySource("classpath:application.properties")
+
+@SpringBootApplication
+@ImportResource("classpath:applicationContext.xml") // au cas ou, pour le moment ça ne sert pas
 public class App
 {
     public static void main( String[] args )
     {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
+        ApplicationContext context = SpringApplication.run(App.class,args);
 
         MovieController controller = context.getBean(MovieController.class);
 
